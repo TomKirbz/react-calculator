@@ -11,8 +11,8 @@ body {
 }
 
 .value-box {
-  height: 83px;
-  padding: 5px 10px 5px 0;
+  height: 100px;
+  padding-right: 15px;
   margin: 0;
   font-size: 70px;
   font-weight: 400;
@@ -21,6 +21,7 @@ body {
   color: white;
   display: flex;
   flex-direction: row-reverse;
+  align-items: center;
 }
 .button-body {
   display: flex;
@@ -29,7 +30,6 @@ body {
   border-bottom: 1px solid rgb(185, 11, 54);
 }
 .num {
-  padding: 10px;
   display: flex;
   width: 25%;
   border-right: 1px solid rgb(185, 11, 54);
@@ -38,22 +38,14 @@ body {
   font-size: 50px;
   font-weight: 400;
 }
-.num-0 {
-  padding: 0 32px 0 32px;
-  display: flex;
+.zero {
   width: 75%;
-  border-right: 1px solid rgb(185, 11, 54);
-  justify-content: center;
-  align-items: center;
-  font-size: 50px;
-  font-weight: 400;
 }
 .clear-value {
   display: flex;
-  padding: 0 32px 0 32px;
   justify-content: center;
   align-items: center;
-  width: 75%;
+  width: 50%;
   border-right: 1px solid rgb(185, 11, 54);
   font-size: 30px;
   font-weight: 400;
@@ -61,7 +53,6 @@ body {
 }
 .func {
   display: flex;
-  padding: 10px;
   justify-content: center;
   align-items: center;
   width: 25%;
@@ -71,18 +62,20 @@ body {
   color: white;
 }
 
+.backtick {
+  border-right: 1px solid rgb(185, 11, 54);
+}
+
 .func:hover,
 .clear-value:hover,
-.num:hover,
-.num-0:hover {
+.num:hover {
   background-color: rgb(124, 148, 255);
   cursor: pointer;
 }
 
 .func:active,
 .clear-value:active,
-.num:active,
-.num-0:active {
+.num:active {
   background-color: rgb(71, 91, 182);
   cursor: pointer;
 }
