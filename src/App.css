@@ -1,33 +1,88 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-top: 200px;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.calc-body {
+  border: 1px solid rgb(185, 11, 54);
+}
+
+.value-box {
+  height: 83px;
+  padding: 5px 10px 5px 0;
+  margin: 0;
+  font-size: 70px;
+  font-weight: 400;
+  width: 300px;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.button-body {
+  display: flex;
+  width: 100%;
+  height: 20%;
+  border-bottom: 1px solid rgb(185, 11, 54);
+}
+.num {
+  padding: 10px;
+  display: flex;
+  width: 25%;
+  border-right: 1px solid rgb(185, 11, 54);
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  font-weight: 400;
+}
+.num-0 {
+  padding: 0 32px 0 32px;
+  display: flex;
+  width: 75%;
+  border-right: 1px solid rgb(185, 11, 54);
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  font-weight: 400;
+}
+.clear-value {
+  display: flex;
+  padding: 0 32px 0 32px;
+  justify-content: center;
+  align-items: center;
+  width: 75%;
+  border-right: 1px solid rgb(185, 11, 54);
+  font-size: 30px;
+  font-weight: 400;
+
+}
+.func {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  background-color: rgb(230, 15, 69);
+  font-size: 50px;
+  font-weight: 400;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.func:hover,
+.clear-value:hover,
+.num:hover,
+.num-0:hover {
+  background-color: rgb(124, 148, 255);
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.func:active,
+.clear-value:active,
+.num:active,
+.num-0:active {
+  background-color: rgb(71, 91, 182);
+  cursor: pointer;
 }
