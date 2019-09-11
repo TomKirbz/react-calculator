@@ -1,13 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-
-let storedValue = null
-let calcFunction = ""
 
 class App extends React.Component {
  state = {
-   value: 0
+   value: 0,
+   calcFunction: "",
+   storedValue: null
  }
 
   produceNumber = (val) => {
@@ -22,39 +20,37 @@ class App extends React.Component {
   }
 
   equals = () => {
-    if (calcFunction === "+") {
+    if (this.state.calcFunction === "+") {
       let currentValue = this.state.value 
-      let newValue = storedValue + currentValue
+      let newValue = this.state.storedValue + currentValue
       this.setState({value: newValue})
 
-    } else if (calcFunction === "/") {
+    } else if (this.state.calcFunction === "/") {
       let currentValue = this.state.value 
-      let newValue = storedValue / currentValue
+      let newValue = this.state.storedValue/ currentValue
       this.setState({value: newValue})
 
-    } else if (calcFunction === "-") {
+    } else if (this.state.calcFunction === "-") {
       let currentValue = this.state.value 
-      let newValue = storedValue - currentValue
+      let newValue = this.state.storedValue - currentValue
       this.setState({value: newValue})
 
-    } else if (calcFunction === "x") {
+    } else if (this.state.calcFunction === "x") {
       let currentValue = this.state.value 
-      let newValue = storedValue * currentValue
+      let newValue = this.state.storedValue * currentValue
       this.setState({value: newValue})
     } 
     
   }
 
   clearValues = () => {
-    this.setState({value: 0})
-    calcFunction = ""
-    storedValue = null
+    this.setState({value: 0, calcFunction: "", storedValue: null})
   }
 
   functionButton = (func) => { 
-      storedValue = this.state.value
-      this.setState({value: 0})
-      calcFunction = func
+      let current = this.state.value
+      this.setState({storedValue: current})
+      this.setState({value: '', calcFunction: func})
   }
 
   backtick = () => {
@@ -63,7 +59,7 @@ class App extends React.Component {
       currentValue = currentValue.toString();
       let newValue = currentValue.substring(0, currentValue.length -1);
       this.setState({value: parseInt(newValue)})
-      } else if (currentValue == 0){
+      } else if (currentValue === 0){
         this.setState({value: 0})
       }
   }
@@ -100,7 +96,6 @@ class App extends React.Component {
       <div className="num zero" onClick={()=> this.produceNumber(0)}>0</div>
       <div className="func" onClick={this.equals}>=</div>
       </div>
-
       </div>
     </div>
   );
